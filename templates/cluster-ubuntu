@@ -4,8 +4,8 @@ baremetal:
 
 cookbooks:
   hopsworks:
-    github: "{repository}"
-    branch: "{branch}"
+    github: "hopsworksjenkins/hopsworks-chef"
+    branch: "test_platform"
 
 attrs:
   install:
@@ -14,10 +14,11 @@ attrs:
     network:
       interface: enp0s3
   hopsworks:
-    ear_url: http://snurran.sics.se/hops/hopsworks/0.1.0/hopsworks-ear.ear
     war_url: http://snurran.sics.se/hops/hopsworks/0.1.0/hopsworks.war
+    ear_url: http://snurran.sics.se/hops/hopsworks/0.1.0/hopsworks-ear.ear
     ca_url: http://snurran.sics.se/hops/hopsworks/0.1.0/hopsworks-ca.war
     port: 8080
+    version: test
 groups:
   namenodes:
     size: 1
@@ -49,4 +50,5 @@ groups:
       - hops::nm
       - tensorflow
       - hopsmonitor::telegraf
+      - hive2
 
